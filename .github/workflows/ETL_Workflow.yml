@@ -46,7 +46,6 @@ jobs:
       # Virtual enviroment setup
       - name: Lambda1 setup
         run: |
-          cd lambda1/
           virtualenv env
           source env/bin/activate
           pip install -r requirements.txt
