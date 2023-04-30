@@ -56,7 +56,6 @@ jobs:
         run: |
           source env/bin/activate
           flake8 Job_section_a.py
-          pytest Job_section_a.py
           deactivate
           
       # Second lambda: HTML transformation into CSV
@@ -66,12 +65,12 @@ jobs:
         run: |
           source env/bin/activate
           flake8 Job_section_b.py
-          pytest Job_section_b.py
           deactivate
       
       # AWS Update Jobs
       - name: AWS update
         run: |
           source env/bin/activate
+          pytest
           python3 ./upload_jobs.py
           deactivate
