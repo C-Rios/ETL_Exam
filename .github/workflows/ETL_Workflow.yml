@@ -44,13 +44,12 @@ jobs:
       # First lambda: HTML Download
       
       # Virtual enviroment setup
-      - name: Lambda1 setup
+      - name: V-env setup
         run: |
           virtualenv env
           source env/bin/activate
           pip install -r requirements.txt
           deactivate
-          
       
       # Clean code and Unit testing
       - name: Job_1 flake8 and unittesting
@@ -59,7 +58,6 @@ jobs:
           flake8 Job_section_a.py
           pytest Job_section_a.py
           deactivate
-      
           
       # Second lambda: HTML transformation into CSV
       
